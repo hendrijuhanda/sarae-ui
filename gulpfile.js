@@ -1,3 +1,11 @@
+/**
+ * Main entry for gulp tasks. 
+ * The tasks include of Sass compiler and HTML template builder with Nunjucks.
+ * 
+ * @since 0.0.1
+ * 
+ */
+
 const gulp = require('gulp')
 const yargs = require('yargs').argv
 const sass = require('gulp-sass')
@@ -6,6 +14,11 @@ const csso = require('gulp-csso')
 const autoprefix = require('gulp-autoprefixer')
 const nunjucksRender = require('gulp-nunjucks-render')
 
+/**
+ * Sass compiler task.
+ * Output css file to src/compiled/css and to dist/css in production mode (minified).
+ *
+ */
 gulp.task('sass', () => {
     'use strict'
 
@@ -26,6 +39,10 @@ gulp.task('sass', () => {
     }
 })
 
+/**
+ * Template purpose is only for showcasing and documenting.
+ * Output index.html to root.
+ */
 gulp.task('nunjucks', () => {
     'use strict'
 
@@ -37,6 +54,9 @@ gulp.task('nunjucks', () => {
     .pipe(gulp.dest('./'))
 })
 
+/**
+ * Default and watcher runner.
+ */
 gulp.task('default', ['sass', 'nunjucks'])
 
 gulp.task('watch', ['default'], () => {

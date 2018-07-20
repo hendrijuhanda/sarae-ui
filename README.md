@@ -1,3 +1,3 @@
 # Sarae UI
 
-A flow by time pet project. Under development...
+A set of good UI collection.
